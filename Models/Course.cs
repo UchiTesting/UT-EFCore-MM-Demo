@@ -5,7 +5,10 @@ namespace EF_MM.Models
 {
     public class Course
     {
-        public Course() { }
+        public Course()
+        {
+            Students = new List<Student>();
+        }
 
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }
