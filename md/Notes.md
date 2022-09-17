@@ -14,6 +14,45 @@ The idea is to create a many-to-many (MM) relationship between `Course` and `Stu
 - A student can take many courses
 - A course can be taken by many students.
 
+> Analysis level diagram
+
+```mermaid
+classDiagram 
+    direction LR
+    Course "*" -- "*" Student
+
+    class Course{
+      +Id:Guid
+      +Title:String
+    }
+    class Student{
+      +Id:Guid
+      +Name:String
+    }
+```
+
+> Design level diagram (in DB following EF conventions)
+
+```mermaid
+classDiagram 
+    direction LR
+    Courses "1" -- "*" CourseStudent
+    CourseStudent "*" -- "1" Students
+
+    class Courses{
+      +Id:Guid
+      +Title:String
+    }
+    class CourseStudent{
+      +CourseId:Guid
+      +StudentId:Guid
+    }
+    class Students{
+      +Id:Guid
+      +Name:String
+    }
+```
+
 > I will keep simple because I do that on my week end and I also wish to have fun before Monday. :smile:
 
 > This project is 1000% YAGNI compliant... or not.  
