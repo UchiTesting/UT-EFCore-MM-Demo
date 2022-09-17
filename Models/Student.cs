@@ -13,6 +13,6 @@ namespace EF_MM.Models
         public int Age { get; set; }
 
         // Navigation property on a collection
-        IEnumerable<Course> Courses { get; set; }
+        public ICollection<Course> Courses { get; set; }
     }
 }

@@ -12,6 +12,6 @@ namespace EF_MM.Models
         public string Title { get; set; }
 
         // Navigation property on a collection
-        IEnumerable<Student> Students { get; set; }
+        public ICollection<Student> Students { get; set; }
     }
 }
